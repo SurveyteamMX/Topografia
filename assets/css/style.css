@@ -53,6 +53,7 @@ header ul {
 header ul li a {
     color: var(--white);
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 header ul li a.active {
@@ -77,7 +78,7 @@ section:not(#Inicio){
     background-position: center;
     padding: 20px;
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #InicioCards {
@@ -87,12 +88,6 @@ section:not(#Inicio){
     height: 100%;
     gap: 20px;
     justify-content: center;
-}
-
-#InicioCards > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    width: 50%;
-    justify-self: center;
 }
 
 #InicioInfo {
@@ -136,14 +131,32 @@ section:not(#Inicio){
     #InicioCards {
         grid-template-columns: 1fr 1fr;
     }
+
+    #InicioCards > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: 50%;
+        justify-self: center;
+    }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 768px) {
     body {
         font-size: xx-small;
     }
 
     header nav ul li a {
         font-size: smaller;
+    }
+}
+
+@media (max-width: 844px) and (orientation: landscape) {
+    #InicioCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #InicioCards > :last-child:nth-child(odd) {
+        grid-column: auto;
+        width: auto;
+        justify-self: auto;
     }
 }
