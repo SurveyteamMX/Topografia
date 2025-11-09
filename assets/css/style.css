@@ -138,9 +138,9 @@ section:not(#Inicio){
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 390px) {
     body {
-        font-size: small;
+        font-size: xx-small;
     }
 
     header nav ul li a {
